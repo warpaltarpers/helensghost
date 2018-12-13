@@ -42,4 +42,4 @@ const API_KEY = API_CONFIG.API_KEY;
 
 * As previously mentioned, [Jovo](http://jovo.tech) will make your life much easier, and they have fantastic support if you need help.
 * [Atom](http://atom.io) is a great text editor and is PPL's editor of choice.
-* [OpenWeatherMap](http://openwweathermap.org) has a great free-tier weather API that is more than sufficient for our needs, and probably yours too.
+* [APIXU](http://apixu.com) has a great free-tier weather API that is more than sufficient for our needs, and probably yours too.
