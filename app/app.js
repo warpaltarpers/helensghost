@@ -9,8 +9,8 @@ const {App} = require('jovo-framework');
 const API_CONFIG = require('./config.js');
 const API_KEY = API_CONFIG.API_KEY;
 
-const https = require('https');
-//const Results = require('results');
+// const https = require('https');
+var request = require('then-request');
 
 const config = {
     logging: true,
@@ -18,8 +18,7 @@ const config = {
 
 const app = new App(config);
 
-var temp = 0.0;
-
+var temp = 0;
 
 // =================================================================================
 // App Logic
@@ -32,34 +31,27 @@ app.setHandler({
 
     },
 
-    'NEW_SESSION': function() {
-      // Important to get this data (bread) after this.tell() so it doesn't hold it up. Also important to do this on NEW_SESSION so the data will always be ready.
-      https.get('https://api.openweathermap.org/data/2.5/weather?zip=45056,us&units=imperial&APPID=' + API_KEY, (res) => {
-        let rawData='';
-
-        res.on('data', (chunk) => { rawData += chunk });
-        res.on('end', () => {
-          console.log('Function Response: ' + JSON.parse(rawData).main.temp);
-          temp = Math.round(JSON.parse(rawData).main.temp);
-
-
-          console.log(temp);
-
-    });
-  });
-    },
-
     'NEW_USER': function() {
       this.tell("Hi, I'm Helen's Ghost. Don't worry, I've gotten pretty bored with scaring students, so now I might as well help them.");
     },
 
     'ThermoIntent': function() {
-      if(temp >= 58) {
-        this.tell("It's currently " + temp + " degrees outside, so my best guess is that your thermostat is set to cool");
-      } else {
-        this.tell("It's currently " + temp + " degrees outside, so my best guess is that your thermostat is set to heat");
-      }
-    }
+
+      // This is important because of the context of "this" used in the conditional statement.
+      var tempThis = this;
+
+      request('GET', 'https://api.apixu.com/v1/current.json?key=' + API_KEY + '&q=45056').then(function (res) {
+        temp = Math.round(JSON.parse(res.getBody()).current.temp_f);
+        console.log(temp);
+
+        if(temp >= 58) {
+          tempThis.tell("It's currently " + temp + " degrees outside, so my best guess is that your thermostat is set to cool");
+        } else {
+          tempThis.tell("It's currently " + temp + " degrees outside, so my best guess is that your thermostat is set to heat");
+        }
+      });
+
+    },
 });
 
 module.exports.app = app;
