@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "jovo-framework": "^1.4.17",
+    "node-emoji": "^1.8.1",
     "then-request": "^6.0.0"
   },
   "devDependencies": {},

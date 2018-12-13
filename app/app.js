@@ -10,6 +10,8 @@ const API_CONFIG = require('./config.js');
 const WEATHER_API_KEY = API_CONFIG.WEATHER_API_KEY;
 const CAL_API_KEY = API_CONFIG.CAL_API_KEY;
 
+const emoji = require('node-emoji');
+
 // const https = require('https');
 var request = require('then-request');
 
@@ -29,6 +31,7 @@ app.setHandler({
     'LAUNCH': function() {
         // Eventually, this will be this.ask(), but as of right now it will cause errors because this piece of shit doesn't do anything yet
         this.tell("Hey, Helen's Ghost here. What can I do for you?");
+        console.log(emoji.get('heart'));
 
     },
 
@@ -46,7 +49,7 @@ app.setHandler({
       // This is important because of the context of "this" used in the conditional statement.
       var tempThis = this;
 
-      request('GET', 'https://api.apixu.com/v1/current.json?key=' + API_KEY + '&q=45056').then(function (res) {
+      request('GET', 'https://api.apixu.com/v1/current.json?key=' + WEATHER_API_KEY + '&q=45056').then(function (res) {
         temp = Math.round(JSON.parse(res.getBody()).current.temp_f);
         console.log(temp);
 
