@@ -7,7 +7,8 @@
 const {App} = require('jovo-framework');
 
 const API_CONFIG = require('./config.js');
-const API_KEY = API_CONFIG.API_KEY;
+const WEATHER_API_KEY = API_CONFIG.WEATHER_API_KEY;
+const CAL_API_KEY = API_CONFIG.CAL_API_KEY;
 
 // const https = require('https');
 var request = require('then-request');
@@ -33,6 +34,11 @@ app.setHandler({
 
     'NEW_USER': function() {
       this.tell("Hi, I'm Helen's Ghost. Don't worry, I've gotten pretty bored with scaring students, so now I might as well help them.");
+    },
+
+    'UpdateIntent': function() {
+
+
     },
 
     'ThermoIntent': function() {
