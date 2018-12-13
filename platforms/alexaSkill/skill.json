@@ -1,21 +1,21 @@
 {
-	"manifest": {
-		"publishingInformation": {
-			"locales": {
-				"en-US": {
-					"name": "helensghost"
-				}
-			}
-		},
-		"apis": {
-			"custom": {
-				"endpoint": {
-					"sslCertificateType": "Wildcard",
-					"uri": "https://webhook.jovo.cloud/12c5f858-98ff-4cc3-ab89-40afc1aaa9fa"
-				},
-				"interfaces": []
-			}
-		},
-		"manifestVersion": "1.0"
-	}
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "helensghost"
+        }
+      }
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sslCertificateType": "Wildcard",
+          "uri": "https://webhook.jovo.cloud/12c5f858-98ff-4cc3-ab89-40afc1aaa9fa"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0"
+  }
 }

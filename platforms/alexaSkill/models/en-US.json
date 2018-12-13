@@ -1,38 +1,44 @@
 {
-	"interactionModel": {
-		"languageModel": {
-			"invocationName": "helens ghost",
-			"types": [],
-			"intents": [
-				{
-					"name": "ThermoIntent",
-					"samples": [
-						"will my thermostat heat my room"
-					]
-				},
-				{
-					"name": "AMAZON.FallbackIntent",
-					"samples": [
-						"hello"
-					]
-				},
-				{
-					"name": "AMAZON.CancelIntent",
-					"samples": []
-				},
-				{
-					"name": "AMAZON.HelpIntent",
-					"samples": []
-				},
-				{
-					"name": "AMAZON.StopIntent",
-					"samples": []
-				},
-				{
-					"name": "AMAZON.NavigateHomeIntent",
-					"samples": []
-				}
-			]
-		}
-	}
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "helens ghost",
+      "intents": [
+        {
+          "name": "ThermoIntent",
+          "slots": [],
+          "samples": [
+            "will my a c work today",
+            "will my thermostat cool or heat my room",
+            "will my thermostat heat or cool my room",
+            "will my thermostat cool my room",
+            "what will my thermostat do",
+            "will my thermostat heat my room"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+            "hello"
+          ]
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    }
+  }
 }
