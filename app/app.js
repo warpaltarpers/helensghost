@@ -30,20 +30,23 @@ app.setHandler({
         // Eventually, this will be this.ask(), but as of right now it will cause errors because this piece of shit doesn't do anything yet
         this.tell("Hey, Helen's Ghost here. What can I do for you?");
 
-        https.get('https://api.openweathermap.org/data/2.5/weather?zip=45056,us&units=imperial&APPID=' + API_KEY, (res) => {
-          let rawData='';
+    },
 
-          res.on('data', (chunk) => { rawData += chunk });
-          res.on('end', () => {
-            console.log('Function Response: ' + JSON.parse(rawData).main.temp);
-            temp = Math.round(JSON.parse(rawData).main.temp);
+    'NEW_SESSION': function() {
+      // Important to get this data (bread) after this.tell() so it doesn't hold it up. Also important to do this on NEW_SESSION so the data will always be ready.
+      https.get('https://api.openweathermap.org/data/2.5/weather?zip=45056,us&units=imperial&APPID=' + API_KEY, (res) => {
+        let rawData='';
+
+        res.on('data', (chunk) => { rawData += chunk });
+        res.on('end', () => {
+          console.log('Function Response: ' + JSON.parse(rawData).main.temp);
+          temp = Math.round(JSON.parse(rawData).main.temp);
 
 
-            console.log(temp);
+          console.log(temp);
 
-      });
     });
-
+  });
     },
 
     'NEW_USER': function() {
