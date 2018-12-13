@@ -5,15 +5,13 @@
       "intents": [
         {
           "name": "ThermoIntent",
-          "slots": [],
           "samples": [
-            "will my a c work today",
-            "will my thermostat cool or heat my room",
-            "will my thermostat heat or cool my room",
-            "will my thermostat cool my room",
-            "what will my thermostat do",
             "will my thermostat heat my room"
           ]
+        },
+        {
+          "name": "NEW_USER",
+          "samples": []
         },
         {
           "name": "AMAZON.FallbackIntent",

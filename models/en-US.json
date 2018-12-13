@@ -6,12 +6,6 @@
 			"languageModel": {
 				"intents": [
 					{
-						"name": "ThermoIntent",
-						"samples": [
-							"will my thermostat heat my room"
-						]
-					},
-					{
 						"name": "AMAZON.FallbackIntent",
 						"samples": [
 							"hello"
@@ -37,5 +31,16 @@
 			}
 		}
 	},
-	"intents": []
+	"intents": [
+		{
+			"name": "ThermoIntent",
+			"phrases": [
+				"will my thermostat heat my room"
+			]
+		},
+		{
+			"name": "NEW_USER",
+			"phrases": []
+		}
+	]
 }

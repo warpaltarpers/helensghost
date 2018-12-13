@@ -30,13 +30,16 @@ var temp = 0;
 app.setHandler({
     'LAUNCH': function() {
         // Eventually, this will be this.ask(), but as of right now it will cause errors because this piece of shit doesn't do anything yet
-        this.tell("Hey, Helen's Ghost here. What can I do for you?");
-        console.log(emoji.get('heart'));
+        this.tell("<amazon:effect name='whispered'>Hey, Helen's Ghost here. What can I do for you?</amazon:effect>");
+
+        this.alexaSkill().showSimpleCard("foo", "bar");
+
 
     },
 
     'NEW_USER': function() {
       this.tell("Hi, I'm Helen's Ghost. Don't worry, I've gotten pretty bored with scaring students, so now I might as well help them.");
+      this.ask("Let's be cordial. You know my name, but yours has slipped my mind. Can you run it by me again?");
     },
 
     'UpdateIntent': function() {
