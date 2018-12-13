@@ -7,7 +7,7 @@
 				{
 					"name": "ThermoIntent",
 					"samples": [
-						"thermo"
+						"will my thermostat heat my room"
 					]
 				},
 				{
