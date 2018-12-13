@@ -1,0 +1,41 @@
+{
+	"invocation": "helens ghost",
+	"inputTypes": [],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "ThermoIntent",
+						"samples": [
+							"thermo"
+						]
+					},
+					{
+						"name": "AMAZON.FallbackIntent",
+						"samples": [
+							"hello"
+						]
+					},
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.NavigateHomeIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	},
+	"intents": []
+}
